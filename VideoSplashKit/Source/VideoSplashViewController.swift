@@ -106,6 +106,10 @@ open class VideoSplashViewController: UIViewController {
         moviePlayer.player?.removeObserver(self, forKeyPath: "status")
         NotificationCenter.default.removeObserver(self)
     }
+
+    public func muteSound(_ mute: Bool) {
+        self.moviePlayer.player?.isMuted = mute
+    }
     
     // Override in subclass
     open func movieReadyToPlay() { }
